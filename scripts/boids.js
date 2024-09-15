@@ -4,6 +4,7 @@
  * Created by: jasuv
  * 
  * Reference: https://www.red3d.com/cwr/boids/
+ * 
  */
 
 // create canvas
@@ -28,8 +29,8 @@ fish_left.src = '../resources/fish_left.svg';
 
 
 // settings
-const count = 400;
-const vision = 70;
+const count = 500;
+const vision = 50;
 const speed = 10;
 const avoidDist = 30;
 const size = 100;
@@ -58,25 +59,52 @@ for (let i = 0; i < count; i++) {
                         Math.random() * canvas.height - centerY);
 }
 
-main();
-function main() {
-    // draw the frame
-    draw();
+/* 
+ * cheers to markE/Dean Radcliffe for coming up with this fps limiter (:
+ * https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
+ * 
+ */
+// set fps
+var stop = false;
+var frameCount = 0;
+var fpsInterval = 1000/60;
+var then = window.performance.now();
+var startTime = then;
+var now, then, elapsed;
 
-    // updates each boids pos and vel
-    for (let i = 0; i < count; i++) {
-        KeepInBounds(boids[i]);
-        Cohesion(boids[i]);
-        Separation(boids[i]);
-        Alignment(boids[i]);
-        AvoidCursor(boids[i]);
-        limitSpeed(boids[i]);
-        boids[i].pos[0] += boids[i].vel[0];
-        boids[i].pos[1] += boids[i].vel[1];
-    }
+
+main();
+function main(newTime) {
+    // limiter
+    if (stop) return;
 
     // get next frame
     requestAnimationFrame(main);
+
+    // calc elapsed time since last loop
+    now = newTime;
+    elapsed = now - then;
+
+    // after enough time has passed draw the next frame
+    if (elapsed > fpsInterval) {
+        // prepare for next frame
+        then = now - (elapsed%fpsInterval);
+
+        // updates each boids pos and vel
+        for (let i = 0; i < count; i++) {
+            KeepInBounds(boids[i]);
+            Cohesion(boids[i]);
+            Separation(boids[i]);
+            Alignment(boids[i]);
+            AvoidCursor(boids[i]);
+            limitSpeed(boids[i]);
+            boids[i].pos[0] += boids[i].vel[0];
+            boids[i].pos[1] += boids[i].vel[1];
+        }
+
+        // draw the frame
+        draw();
+    }
 }
 
 // attracts boids to one another
