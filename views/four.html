@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/style.css">
+    <title>Document</title>
+    <canvas></canvas>
+</head>
+
+<body>
+    <script src="../scripts/boids.js"></script>
+    <div id="banner">This is my banner!</div>
+    <nav class="menue">
+        <ul>
+            <span><a id="bar-item" href="../index.html">home page</a></span>
+            <span><a id="bar-item" href="./two.html">two page</a></span>
+            <span><a id="bar-item" href="./three.html">three page</a></span>
+            <span><a id="bar-item" href="./four.html">four page</a></span>
+        </ul>
+    </nav>
+    <h1>Boids are so cool!</h1>
+    <h2>
+        Try moving your cursor around!<br>
+        learn more about boids <a href="https://www.red3d.com/cwr/boids/">here</a>
+    </h2>
+    <div id="music-button">
+        <audio id="music" src="../resources/royalty free The Blue Danube.mp3" loop></audio>
+        <img id="volume-image" src="../resources/volume-button-clipart-1.png" onclick="PlayMusic()">
+        <script>
+            function PlayMusic() {
+                var audio = document.getElementById("music");
+                if (audio.paused) audio.play();
+                else audio.pause();
+            }
+        </script>
+    </div>
+</body>
+
+</html>

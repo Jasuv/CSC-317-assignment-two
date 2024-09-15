@@ -1,0 +1,25 @@
+<svg version="1.1" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+    <!-- sun -->
+    <circle cx="200" cy="200" r="50" fill="#ffff82" />
+    <g>
+        <!-- mercury -->
+        <g>
+            <circle cx="280" cy="200" r="10" fill="#dc4509" />
+            <ellipse cx="200" cy="200" rx="80" ry="80" fill="none" stroke="#dc4509" stroke-width="3" />
+            <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="5s" repeatCount="indefinite" />
+        </g>
+        <!-- earth -->
+        <g>
+            <circle cx="350" cy="200" r="20" fill="#236523" />
+            <ellipse cx="200" cy="200" rx="150" ry="150" fill="none" stroke="#236523" stroke-width="3" />
+            <!-- moon -->
+            <g>
+                <circle cx="390" cy="200" r="10" fill="#4d4d4d" />
+                <ellipse cx="350" cy="200" rx="40" ry="40" fill="none" stroke="#4d4d4d" stroke-width="3" />
+                <animateTransform attributeName="transform" type="rotate" from="0 350 200" to="360 350 200" dur="1s" repeatCount="indefinite" />
+            </g>
+        </g>
+        <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="15s"
+            repeatCount="indefinite" />
+    </g>
+</svg>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="resources/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="resources/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="banner">This is my banner!</div>
+    <nav class="menue">
+        <ul>
+            <span><a id="bar-item" href="./index.html">home page</a></span>
+            <span><a id="bar-item" href="./views/two.html">two page</a></span>
+            <span><a id="bar-item" href="./views/three.html">three page</a></span>
+            <span><a id="bar-item" href="./views/four.html">four page</a></span>
+        </ul>
+    </nav>
+    <h1>Assignment 5</h1>
+    <h2 class="css-question">How to Apply CSS to HTML</h2>
+    <p class="css-question">
+        Add this line in the header to apply the css<br>
+        <code>
+            &lt;link rel="stylesheet" href="resources/style.css"&gt;
+        </code>
+    </p>
+    <h2 class="js-question">How to use JavaScript in a Webpage</h2>
+    <p class="js-question">
+        This is how you link an external JavaScript file in your html<br>
+        <code>
+            &lt;script src="path/to/my/script.js"&gt;&lt;/script&gt;
+        </code>
+        <br><br>
+        But if you want to add JavaScript code rather than reference an external file
+    <pre>
+            <code>&lt;script&gt; 
+    ("load", () =&gt; {
+        console.log("This function is executed once the page is fully loaded");
+    });
+&lt/script&gt;</code> 
+        </pre>
+    </p>
+</body>
+
+</html>
