@@ -1,14 +1,14 @@
 # CSC-317-assignment-two
 multipage-website-static
 
-# Home page
+**Home page**
 how to reference CSS and JS files in html
 
-# page two
+**page two**
 Favorite resources
 
-# page three
+**page three**
 SVG animation example
 
-# page four
+**page four**
 Boid simulation (with music)
